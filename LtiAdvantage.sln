@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C53CA168-7453-4035-8AB3-79781B00A4A4}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LtiAdvantage.IdentityServer4", "src\LtiAdvantage.IdentityServer4\LtiAdvantage.IdentityServer4.csproj", "{B1B5BE67-85D7-4320-9221-D906AFF1806F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LtiAdvantage", "src\LtiAdvantage\LtiAdvantage.csproj", "{43D22F50-460B-485D-9979-05DEB3DA6A87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LtiAdvantage.IdentityModel", "src\LtiAdvantage.IdentityModel\LtiAdvantage.IdentityModel.csproj", "{7C375F33-8D95-47A6-B56B-A570889BA6CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LtiAdvantage.UnitTests", "test\LtiAdvantage.UnitTests\LtiAdvantage.UnitTests.csproj", "{02187DC7-C6DD-4ACF-AFE0-45C4AAD6E1E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LtiAdvantage.IntegrationTests", "test\LtiAdvantage.IntegrationTests\LtiAdvantage.IntegrationTests.csproj", "{E882044C-C801-4F6F-8D2F-5E32693A8816}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1B5BE67-85D7-4320-9221-D906AFF1806F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B5BE67-85D7-4320-9221-D906AFF1806F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B5BE67-85D7-4320-9221-D906AFF1806F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B5BE67-85D7-4320-9221-D906AFF1806F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D22F50-460B-485D-9979-05DEB3DA6A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D22F50-460B-485D-9979-05DEB3DA6A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D22F50-460B-485D-9979-05DEB3DA6A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D22F50-460B-485D-9979-05DEB3DA6A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C375F33-8D95-47A6-B56B-A570889BA6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C375F33-8D95-47A6-B56B-A570889BA6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C375F33-8D95-47A6-B56B-A570889BA6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C375F33-8D95-47A6-B56B-A570889BA6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02187DC7-C6DD-4ACF-AFE0-45C4AAD6E1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02187DC7-C6DD-4ACF-AFE0-45C4AAD6E1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02187DC7-C6DD-4ACF-AFE0-45C4AAD6E1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02187DC7-C6DD-4ACF-AFE0-45C4AAD6E1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E882044C-C801-4F6F-8D2F-5E32693A8816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E882044C-C801-4F6F-8D2F-5E32693A8816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E882044C-C801-4F6F-8D2F-5E32693A8816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E882044C-C801-4F6F-8D2F-5E32693A8816}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B18728B-3EC0-473A-89A7-EAF0CD5597D3}
+	EndGlobalSection
+EndGlobal
