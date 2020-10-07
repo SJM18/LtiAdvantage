@@ -56,9 +56,9 @@ namespace AdvantageTool
             // within an iframe on the platform
             services.AddAntiforgery(options => options.SuppressXFrameOptionsHeader = true);
 
-            services.AddMvc()
+            services.AddMvc(options => options.EnableEndpointRouting = false)
                 .AddRazorPagesOptions(options => options.Conventions.AuthorizeFolder("/Platforms"))
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                .SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             services.AddHttpClient();
 
@@ -76,7 +76,9 @@ namespace AdvantageTool
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                //app.UseExceptionHandler("/Error");
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
                 app.UseHsts();
             }
 

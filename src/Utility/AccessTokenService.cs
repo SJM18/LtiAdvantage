@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Security.Claims;
@@ -40,18 +41,20 @@ namespace AdvantageTool.Utility
         {
             if (issuer.IsMissing())
             {
-                return new TokenResponse(new ArgumentNullException(nameof(issuer)));
+                return TokenResponse.FromException<TokenResponse>(new ArgumentNullException(nameof(issuer)));
+
+
             }
 
             if (scope.IsMissing())
             {
-                return new TokenResponse(new ArgumentNullException(nameof(scope)));
+                return TokenResponse.FromException<TokenResponse>(new ArgumentNullException(nameof(scope)));
             }
 
             var platform = await _context.GetPlatformByIssuerAsync(issuer);
             if (platform == null)
             {
-                return new TokenResponse(new Exception("Cannot find platform registration."));
+                return TokenResponse.FromException<TokenResponse>(new Exception("Cannot find platform registration."));
             }
 
             // Use a signed JWT as client credentials.
@@ -62,21 +65,26 @@ namespace AdvantageTool.Utility
             payload.AddClaim(new Claim(JwtRegisteredClaimNames.Iat, EpochTime.GetIntDate(DateTime.UtcNow).ToString()));
             payload.AddClaim(new Claim(JwtRegisteredClaimNames.Nbf, EpochTime.GetIntDate(DateTime.UtcNow.AddSeconds(-5)).ToString()));
             payload.AddClaim(new Claim(JwtRegisteredClaimNames.Exp, EpochTime.GetIntDate(DateTime.UtcNow.AddMinutes(5)).ToString()));
-            payload.AddClaim(new Claim(JwtRegisteredClaimNames.Jti, CryptoRandom.CreateRandomKeyString(32)));
+            payload.AddClaim(new Claim(JwtRegisteredClaimNames.Jti, CryptoRandom.CreateUniqueId(32)));
 
             var handler = new JwtSecurityTokenHandler();
             var credentials = PemHelper.SigningCredentialsFromPemString(platform.PrivateKey);
             var jwt = handler.WriteToken(new JwtSecurityToken(new JwtHeader(credentials), payload));
 
+
+            var jwtClientCredentials = new JwtClientCredentialsTokenRequest
+            {
+                Address = platform.AccessTokenUrl,
+                ClientId = platform.ClientId,
+                Jwt = jwt,
+                Scope = scope,
+                ClientAssertion = new ClientAssertion() { Type = OidcConstants.ClientAssertionTypes.JwtBearer, Value = jwt },
+                Parameters = !string.IsNullOrWhiteSpace(scope) ? new Dictionary<string, string>() { { OidcConstants.TokenRequest.Scope, scope } } : null,
+                GrantType = OidcConstants.GrantTypes.ClientCredentials
+            };
+
             var httpClient = _httpClientFactory.CreateClient();
-            return await httpClient.RequestClientCredentialsTokenWithJwtAsync(
-                    new JwtClientCredentialsTokenRequest
-                    {
-                        Address = platform.AccessTokenUrl,
-                        ClientId = platform.ClientId,
-                        Jwt = jwt,
-                        Scope = scope
-                    });
+            return await httpClient.RequestTokenAsync(jwtClientCredentials, default); //RequestClientCredentialsTokenWithJwtAsync(jwtClientCredentials);
         }
     }
 }
