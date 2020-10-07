@@ -50,7 +50,7 @@ namespace AdvantageTool.Pages.ResourcePresenters
 
             if (!ModelState.IsValid)
             {
-                
+
             }
 
             return Page();

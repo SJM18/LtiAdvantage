@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Http;
@@ -7,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AdvantageTool.Data;
+using AdvantageTool.Pages.ResourcePresenters;
 using AdvantageTool.Utility;
 using IdentityModel.Client;
 using IdentityModel.Internal;
@@ -69,9 +71,9 @@ namespace AdvantageTool.Pages
         /// <returns></returns>
         public async Task<IActionResult> OnPostAsync(
             string platformId,
-            [FromForm(Name = "id_token")] string idToken, 
-            [FromForm(Name = "scope")] string scope = null, 
-            [FromForm(Name = "state")] string state = null, 
+            [FromForm(Name = "id_token")] string idToken,
+            [FromForm(Name = "scope")] string scope = null,
+            [FromForm(Name = "state")] string state = null,
             [FromForm(Name = "session_state")] string sessionState = null)
         {
             // Authenticate the request starting at step 5 in the OpenId Implicit Flow
@@ -214,6 +216,12 @@ namespace AdvantageTool.Pages
             IdToken = idToken;
             LtiRequest = new LtiResourceLinkRequest(jwt.Payload);
 
+            if (LtiRequest.Sub.Contains("YT="))
+            {
+
+                return Post("/ResourcePresenters/YoutubePresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
+            }
+
             return Page();
         }
 
@@ -234,7 +242,7 @@ namespace AdvantageTool.Pages
             LtiRequest = new LtiResourceLinkRequest(jwt.Payload);
 
             var tokenResponse = await _accessTokenService.GetAccessTokenAsync(
-                LtiRequest.Iss, 
+                LtiRequest.Iss,
                 Constants.LtiScopes.Ags.LineItem);
 
             // The IMS reference implementation returns "Created" with success. 
@@ -307,7 +315,7 @@ namespace AdvantageTool.Pages
             LtiRequest = new LtiResourceLinkRequest(jwt.Payload);
 
             var tokenResponse = await _accessTokenService.GetAccessTokenAsync(
-                LtiRequest.Iss, 
+                LtiRequest.Iss,
                 Constants.LtiScopes.Ags.Score);
 
             // The IMS reference implementation returns "Created" with success. 
@@ -379,8 +387,8 @@ namespace AdvantageTool.Pages
                 // The identifier of the LtiResourceLink message (or the deep link message, etc)
                 lti_message_hint = JsonConvert.SerializeObject(new
                 {
-                    id = resourceLinkId, 
-                    messageType = Constants.Lti.LtiResourceLinkRequestMessageType, 
+                    id = resourceLinkId,
+                    messageType = Constants.Lti.LtiResourceLinkRequestMessageType,
                     courseId = contextId
                 })
             };
@@ -388,7 +396,7 @@ namespace AdvantageTool.Pages
             var url = new RequestUrl(Url.Page("./OidcLogin")).Create(values);
             return Redirect(url);
         }
-        
+
         /// <summary>
         /// Return a <see cref="ContentResult"/> that automatically POSTs the values.
         /// </summary>
@@ -413,8 +421,8 @@ namespace AdvantageTool.Pages
             s.Append("</form></body></html>");
             return new ContentResult
             {
-                Content = s.ToString(), 
-                ContentType = "text/html", 
+                Content = s.ToString(),
+                ContentType = "text/html",
                 StatusCode = StatusCodes.Status200OK
             };
         }
