@@ -41,20 +41,20 @@ namespace AdvantageTool.Utility
         {
             if (issuer.IsMissing())
             {
-                return TokenResponse.FromException<TokenResponse>(new ArgumentNullException(nameof(issuer)));
+                return new TokenResponse(new ArgumentNullException(nameof(issuer)));
 
 
             }
 
             if (scope.IsMissing())
             {
-                return TokenResponse.FromException<TokenResponse>(new ArgumentNullException(nameof(scope)));
+                return new TokenResponse(new ArgumentNullException(nameof(scope)));
             }
 
             var platform = await _context.GetPlatformByIssuerAsync(issuer);
             if (platform == null)
             {
-                return TokenResponse.FromException<TokenResponse>(new Exception("Cannot find platform registration."));
+                return new TokenResponse(new Exception("Cannot find platform registration."));
             }
 
             // Use a signed JWT as client credentials.
