@@ -10,12 +10,20 @@
   <ItemGroup>
     <Compile Remove="LtiAdvantage.IdentityModel\**" />
     <Compile Remove="LtiAdvantage.IdentityServer4\**" />
+    <Compile Remove="LtiAdvantage\bin\**" />
+    <Compile Remove="LtiAdvantage\obj\**" />
     <Content Remove="LtiAdvantage.IdentityModel\**" />
     <Content Remove="LtiAdvantage.IdentityServer4\**" />
+    <Content Remove="LtiAdvantage\bin\**" />
+    <Content Remove="LtiAdvantage\obj\**" />
     <EmbeddedResource Remove="LtiAdvantage.IdentityModel\**" />
     <EmbeddedResource Remove="LtiAdvantage.IdentityServer4\**" />
+    <EmbeddedResource Remove="LtiAdvantage\bin\**" />
+    <EmbeddedResource Remove="LtiAdvantage\obj\**" />
     <None Remove="LtiAdvantage.IdentityModel\**" />
     <None Remove="LtiAdvantage.IdentityServer4\**" />
+    <None Remove="LtiAdvantage\bin\**" />
+    <None Remove="LtiAdvantage\obj\**" />
   </ItemGroup>
 
   <ItemGroup>
