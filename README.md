@@ -1,3 +1,5 @@
+This is a fork of original library to extend features
+
 # LTI Advantage Libraries for .NET
 
 - [LtiAdvantage](https://github.com/andyfmiller/LtiAdvantage/tree/master/src/LtiAdvantage) is a library to ease the work of creating an LTI Advantage platform or tool.
