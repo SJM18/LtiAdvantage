@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LtiAdvantage.IdentityModel\**" />
+    <Compile Remove="LtiAdvantage.IdentityServer4\**" />
+    <Content Remove="LtiAdvantage.IdentityModel\**" />
+    <Content Remove="LtiAdvantage.IdentityServer4\**" />
+    <EmbeddedResource Remove="LtiAdvantage.IdentityModel\**" />
+    <EmbeddedResource Remove="LtiAdvantage.IdentityServer4\**" />
+    <None Remove="LtiAdvantage.IdentityModel\**" />
+    <None Remove="LtiAdvantage.IdentityServer4\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="IdentityModel" Version="3.10.5" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.5.1" />
@@ -21,8 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\LTI\LtiAdvantage\src\LtiAdvantage.IdentityModel\LtiAdvantage.IdentityModel.csproj" />
-    <ProjectReference Include="..\..\..\LTI\LtiAdvantage\src\LtiAdvantage\LtiAdvantage.csproj" />
+    <ProjectReference Include="LtiAdvantage.IdentityModel\LtiAdvantage.IdentityModel.csproj" />
+    <ProjectReference Include="LtiAdvantage.IdentityServer4\LtiAdvantage.IdentityServer4.csproj" />
   </ItemGroup>
 
   <ItemGroup>
