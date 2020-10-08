@@ -50,9 +50,9 @@ namespace AdvantageTool.Pages.Components.LineItems
             model.LineItemUrl = model.LtiRequest.AssignmentGradeServices.LineItemUrl;
 
             var tokenResponse = await _accessTokenService.GetAccessTokenAsync(
-                model.LtiRequest.Iss, 
-                string.Join(" ", 
-                    Constants.LtiScopes.Ags.LineItem, 
+                model.LtiRequest.Iss,
+                string.Join(" ",
+                    Constants.LtiScopes.Ags.LineItem,
                     Constants.LtiScopes.Ags.ResultReadonly,
                     Constants.LtiScopes.Nrps.MembershipReadonly));
 
@@ -96,42 +96,39 @@ namespace AdvantageTool.Pages.Components.LineItems
                 return View();
             }
 
-            // Get all the members of the course
-            model.Members = new Dictionary<string, string>();
+            //try
+            //{
+            //    var httpClient = _httpClientFactory.CreateClient();
+            //    httpClient.SetBearerToken(tokenResponse.AccessToken);
 
-            try
-            {
-                var httpClient = _httpClientFactory.CreateClient();
-                httpClient.SetBearerToken(tokenResponse.AccessToken);
+            //    httpClient.DefaultRequestHeaders.Accept.Clear();
+            //    httpClient.DefaultRequestHeaders.Accept
+            //        .Add(new MediaTypeWithQualityHeaderValue(Constants.MediaTypes.MembershipContainer));
 
-                httpClient.DefaultRequestHeaders.Accept.Clear();
-                httpClient.DefaultRequestHeaders.Accept
-                    .Add(new MediaTypeWithQualityHeaderValue(Constants.MediaTypes.MembershipContainer));
+            //    using (var response = await httpClient.GetAsync(model.LtiRequest.NamesRoleService.ContextMembershipUrl))
+            //    {
+            //        if (!response.IsSuccessStatusCode)
+            //        {
+            //            model.Status = response.ReasonPhrase;
+            //            return View(model);
+            //        }
 
-                using (var response = await httpClient.GetAsync(model.LtiRequest.NamesRoleService.ContextMembershipUrl))
-                {
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        model.Status = response.ReasonPhrase;
-                        return View(model);
-                    }
-
-                    var content = await response.Content.ReadAsStringAsync();
-                    var membership = JsonConvert.DeserializeObject<MembershipContainer>(content);
-                    foreach (var member in membership.Members.OrderBy(m => m.FamilyName).ThenBy(m => m.GivenName))
-                    {
-                        if (!model.Members.ContainsKey(member.UserId))
-                        {
-                            model.Members.Add(member.UserId, $"{member.FamilyName}, {member.GivenName}");
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                model.Status = e.Message;
-                return View(model);
-            }
+            //        var content = await response.Content.ReadAsStringAsync();
+            //        var membership = JsonConvert.DeserializeObject<MembershipContainer>(content);
+            //        foreach (var member in membership.Members.OrderBy(m => m.FamilyName).ThenBy(m => m.GivenName))
+            //        {
+            //            if (!model.Members.ContainsKey(member.UserId))
+            //            {
+            //                model.Members.Add(member.UserId, $"{member.FamilyName}, {member.GivenName}");
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    model.Status = e.Message;
+            //    return View(model);
+            //}
 
             // Get all the results
             try
@@ -162,6 +159,11 @@ namespace AdvantageTool.Pages.Components.LineItems
             {
                 model.Status = e.Message;
             }
+
+            var users = model.LineItems.SelectMany(x => x.Results).GroupBy(g => g.UserId).Select(s => s.Key).ToList();
+
+            // Get all the members of the course
+            model.Members = users.ToDictionary(d => d, d => d == model.LtiRequest.UserId ? model.LtiRequest.Name : "UserId: " + d);
 
             return View(model);
         }

@@ -216,7 +216,7 @@ namespace AdvantageTool.Pages
             IdToken = idToken;
             LtiRequest = new LtiResourceLinkRequest(jwt.Payload);
 
-            if (LtiRequest.Sub.Contains("YT="))
+            if (LtiRequest.ResourceLink.Id.Contains("YT="))
             {
 
                 return Post("/ResourcePresenters/YoutubePresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
@@ -382,7 +382,7 @@ namespace AdvantageTool.Pages
                 login_hint = userId,
 
                 // The endpoint to be executed at the end of the OIDC authentication flow
-                target_link_uri = Url.Page("./Tool", null, null, Request.Scheme),
+                target_link_uri = Url.Page("/Tool", null, null, Request.Scheme),
 
                 // The identifier of the LtiResourceLink message (or the deep link message, etc)
                 lti_message_hint = JsonConvert.SerializeObject(new
@@ -393,7 +393,7 @@ namespace AdvantageTool.Pages
                 })
             };
 
-            var url = new RequestUrl(Url.Page("./OidcLogin")).Create(values);
+            var url = new RequestUrl(Url.Page("/OidcLogin")).Create(values);
             return Redirect(url);
         }
 
