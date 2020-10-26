@@ -18,7 +18,9 @@ namespace AdvantageTool.Data
         }
 
         public DbSet<Platform> Platforms { get; set; }
-        
+
+        public DbSet<Video> Videos { get; set; }
+
         /// <summary>
         /// Returns the fully populated <see cref="AdvantageToolUser"/> corresponding to the
         /// IdentityOptions.ClaimsIdentity.UserIdClaimType claim in the principal or null.
@@ -81,6 +83,11 @@ namespace AdvantageTool.Data
             }
 
             return await Platforms.SingleOrDefaultAsync(p => p.PlatformId == platformId);
+        }
+
+        public async Task<List<Video>> GetAllVideo()
+        {
+            return Videos.ToList();
         }
     }
 }

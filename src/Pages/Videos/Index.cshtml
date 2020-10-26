@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Videos";
+}
+
+<div class="container-fluid">
+    <h4>@ViewData["Title"]</h4>
+    <p>
+        <a asp-page="Create">Add New Video</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.VideoModels[0].VideoId)</th>
+                <th>@Html.DisplayNameFor(m => m.VideoModels[0].VideoType)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.VideoModels)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.VideoId)</td>
+                    <td>@Html.DisplayFor(m => item.VideoType)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
