@@ -84,6 +84,8 @@ namespace AdvantageTool.Pages
             else
             {
                 Activities = GenerateActivities(12);
+
+                ((List<Activity>)Activities).AddRange(GenerateVideoActivities(_context));
             }
 
             return Page();
@@ -128,6 +130,11 @@ namespace AdvantageTool.Pages
                         {
                             contentItem.Custom.TryAdd(keyValue.Key, keyValue.Value);
                         }
+                    }
+
+                    if(activity.IsVideo)
+                    {
+                        contentItem.Custom.TryAdd("videoId", activity.Id.ToString());
                     }
 
                     contentItems.Add(contentItem);
@@ -198,6 +205,15 @@ namespace AdvantageTool.Pages
             return activities;
         }
 
+        private static IList<Activity> GenerateVideoActivities(ApplicationDbContext context)
+        {
+            var videoActivities = new List<Activity>();
+
+            videoActivities = context.GetAllVideo().Result.Select(v => new Activity() { Description = v.VideoType + " activity", Id = v.Id, Title = v.VideoId, IsVideo = true }).ToList();
+
+            return videoActivities;
+        }
+
         /// <summary>
         /// An activity.
         /// </summary>
@@ -207,6 +223,8 @@ namespace AdvantageTool.Pages
             public string Title { get; set; }
             public string Description { get; set; }
             public bool Selected { get; set; }
+            public bool IsVideo { get; set; }
+
         }
     }
 }

@@ -218,10 +218,26 @@ namespace AdvantageTool.Pages
 
             if (LtiRequest.ResourceLink.Id.Contains("YT="))
             {
-
                 return Post("/ResourcePresenters/YoutubePresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
             }
+            else if (LtiRequest.ResourceLink.Id.Contains("VI="))
+            {
+                return Post("/ResourcePresenters/VimeoPresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
+            }
+            else if (LtiRequest.Custom.ContainsKey("videoId"))
+            { 
+                var video = _context.Videos.FirstOrDefault(v => v.Id == int.Parse(LtiRequest.Custom["videoId"]));
 
+                if (video != null && video.VideoType == VideoType.Youtube)
+                {
+                    return Post("/ResourcePresenters/YoutubePresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
+                }
+                else if(video != null && video.VideoType == VideoType.Vimeo)
+                {
+                    return Post("/ResourcePresenters/VimeoPresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
+                }
+            }
+           
             return Page();
         }
 
