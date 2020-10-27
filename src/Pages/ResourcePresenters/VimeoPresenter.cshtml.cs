@@ -12,11 +12,11 @@ using Newtonsoft.Json;
 namespace AdvantageTool.Pages.ResourcePresenters
 {
     [IgnoreAntiforgeryToken]
-    public class YoutubePresenterModel : PageModel
+    public class VimeoPresenterModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public YoutubePresenterModel(ApplicationDbContext context)
+        public VimeoPresenterModel(ApplicationDbContext context)
         {
             this._context = context;
         }
@@ -41,20 +41,20 @@ namespace AdvantageTool.Pages.ResourcePresenters
         /// </summary>
         public LtiResourceLinkRequest LtiRequest { get; set; }
 
-        public string YoutubeVideoId { get; set; }
+        public string VimeoVideoId { get; set; }
 
         public void OnGet(string LtiRequest)
         {
             this.LtiRequest = JsonConvert.DeserializeObject<LtiResourceLinkRequest>(LtiRequest);
 
-            if (this.LtiRequest.ResourceLink.Id.Contains("YT="))
+            if (this.LtiRequest.ResourceLink.Id.Contains("VI="))
             {
-                this.YoutubeVideoId = this.LtiRequest.ResourceLink.Id.Remove(0, 3);
+                this.VimeoVideoId = this.LtiRequest.ResourceLink.Id.Remove(0, 3);
             }
             else if (this.LtiRequest.Custom.ContainsKey("videoId"))
             {
                 var video = _context.Videos.FirstOrDefault(v => v.Id == int.Parse(this.LtiRequest.Custom["videoId"]));
-                this.YoutubeVideoId = video.VideoId;
+                this.VimeoVideoId = video.VideoId;
             }
         }
 
@@ -64,14 +64,14 @@ namespace AdvantageTool.Pages.ResourcePresenters
 
             this.LtiRequest = JsonConvert.DeserializeObject<LtiResourceLinkRequest>(LtiRequest);
 
-            if (this.LtiRequest.ResourceLink.Id.Contains("YT="))
+            if (this.LtiRequest.ResourceLink.Id.Contains("VI="))
             {
-                this.YoutubeVideoId = this.LtiRequest.ResourceLink.Id.Remove(0, 3);
+                this.VimeoVideoId = this.LtiRequest.ResourceLink.Id.Remove(0, 3);
             }
             else if (this.LtiRequest.Custom.ContainsKey("videoId"))
             {
                 var video = _context.Videos.FirstOrDefault(v => v.Id == int.Parse(this.LtiRequest.Custom["videoId"]));
-                this.YoutubeVideoId = video.VideoId;
+                this.VimeoVideoId = video.VideoId;
             }
 
             return Page();
