@@ -10,7 +10,7 @@ namespace AdvantageTool.Pages.Components.LineItems
         public List<MyLineItem> LineItems { get; set; }
         public string LineItemUrl { get; set; }
         public LtiResourceLinkRequest LtiRequest { get; set; }
-        public Dictionary<string, string> Members { get; set; }
+        public Dictionary<string, string> Members { get; set; } = new Dictionary<string, string>();
         public string Status { get; set; }
 
         public LineItemsModel(string idToken)

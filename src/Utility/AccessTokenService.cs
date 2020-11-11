@@ -37,7 +37,7 @@ namespace AdvantageTool.Utility
         /// <param name="issuer">The issuer.</param>
         /// <param name="scope">The scope to request.</param>
         /// <returns>The token response.</returns>
-        public async Task<TokenResponse> GetAccessTokenAsync(string issuer, string scope)
+        public async Task<TokenResponse> GetAccessTokenAsync(string signingIssuer, string issuer, string scope)
         {
             if (issuer.IsMissing())
             {
@@ -59,7 +59,7 @@ namespace AdvantageTool.Utility
 
             // Use a signed JWT as client credentials.
             var payload = new JwtPayload();
-            payload.AddClaim(new Claim(JwtRegisteredClaimNames.Iss, platform.ClientId));
+            payload.AddClaim(new Claim(JwtRegisteredClaimNames.Iss, signingIssuer));
             payload.AddClaim(new Claim(JwtRegisteredClaimNames.Sub, platform.ClientId));
             payload.AddClaim(new Claim(JwtRegisteredClaimNames.Aud, platform.AccessTokenUrl));
             payload.AddClaim(new Claim(JwtRegisteredClaimNames.Iat, EpochTime.GetIntDate(DateTime.UtcNow).ToString()));

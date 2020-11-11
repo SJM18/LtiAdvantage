@@ -15,9 +15,11 @@ using IdentityModel.Internal;
 using LtiAdvantage;
 using LtiAdvantage.AssignmentGradeServices;
 using LtiAdvantage.Lti;
+using Microsoft.ApplicationInsights.AspNetCore.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
@@ -225,19 +227,19 @@ namespace AdvantageTool.Pages
                 return Post("/ResourcePresenters/VimeoPresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
             }
             else if (LtiRequest.Custom.ContainsKey("videoId"))
-            { 
+            {
                 var video = _context.Videos.FirstOrDefault(v => v.Id == int.Parse(LtiRequest.Custom["videoId"]));
 
                 if (video != null && video.VideoType == VideoType.Youtube)
                 {
                     return Post("/ResourcePresenters/YoutubePresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
                 }
-                else if(video != null && video.VideoType == VideoType.Vimeo)
+                else if (video != null && video.VideoType == VideoType.Vimeo)
                 {
                     return Post("/ResourcePresenters/VimeoPresenter", new { LtiRequest = JsonConvert.SerializeObject(LtiRequest) });
                 }
             }
-           
+
             return Page();
         }
 
@@ -258,6 +260,7 @@ namespace AdvantageTool.Pages
             LtiRequest = new LtiResourceLinkRequest(jwt.Payload);
 
             var tokenResponse = await _accessTokenService.GetAccessTokenAsync(
+                Request.GetUri().GetLeftPart(UriPartial.Authority),
                 LtiRequest.Iss,
                 Constants.LtiScopes.Ags.LineItem);
 
@@ -280,6 +283,7 @@ namespace AdvantageTool.Pages
                     EndDateTime = DateTime.UtcNow.AddMonths(3),
                     Label = LtiRequest.ResourceLink.Title,
                     ResourceLinkId = LtiRequest.ResourceLink.Id,
+                    ResourceId = Guid.NewGuid().ToString(),
                     ScoreMaximum = 100,
                     StartDateTime = DateTime.UtcNow
                 };
@@ -331,6 +335,7 @@ namespace AdvantageTool.Pages
             LtiRequest = new LtiResourceLinkRequest(jwt.Payload);
 
             var tokenResponse = await _accessTokenService.GetAccessTokenAsync(
+                Request.GetUri().GetLeftPart(UriPartial.Authority),
                 LtiRequest.Iss,
                 Constants.LtiScopes.Ags.Score);
 
