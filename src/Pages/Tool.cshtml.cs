@@ -192,7 +192,7 @@ namespace AdvantageTool.Pages
                 RequireSignedTokens = true,
                 ValidateIssuerSigningKey = true,
 
-                ValidAudience = platform.ClientId,
+                ValidAudience = Request.GetUri().GetLeftPart(UriPartial.Authority),
                 ValidIssuer = platform.Issuer,
                 IssuerSigningKey = new RsaSecurityKey(rsaParameters),
 
@@ -362,9 +362,14 @@ namespace AdvantageTool.Pages
                     TimeStamp = DateTime.UtcNow,
                     UserId = LtiRequest.UserId
                 };
+
                 if (score.ScoreGiven > 75)
                 {
                     score.Comment = "Good job!";
+                }
+                else if(score.ScoreGiven > 50)
+                {
+                    score.Comment = "Not bad!";
                 }
 
                 using (var response = await httpClient.PostAsync(
