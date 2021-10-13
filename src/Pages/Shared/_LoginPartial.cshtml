@@ -1,15 +1,21 @@
 @inject SignInManager<Data.AdvantageToolUser> SignInManager
 @inject UserManager<Data.AdvantageToolUser> UserManager
 
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Resources
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<Localization> SharedLocalizer
+
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link"asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
             </li>
             <li class="nav-item">
-                <button type="submit" class="btn btn-link nav-link">Logout</button>
+                <button type="submit" class="btn btn-link nav-link">@SharedLocalizer["Logout"]</button>
             </li>
         </ul>
     </form>
@@ -18,10 +24,10 @@ else
 {
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">@SharedLocalizer["Register"]</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">@SharedLocalizer["SignIn"]</a>
         </li>
     </ul>
 }

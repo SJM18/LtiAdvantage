@@ -1,7 +1,14 @@
 ﻿@page
 @model IndexModel
+
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Resources
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<Localization> SharedLocalizer
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = SharedLocalizer["Home"];
 }
 
 <div class="container-fluid">
@@ -9,27 +16,26 @@
         @if (!User.Identity.IsAuthenticated)
         {
             <div class="col">
-                <h4>Welcome Stranger!</h4>
+                <h4>@SharedLocalizer["WelcomeStranger"]</h4>
                 <p>
-                    Please <a asp-area="Identity" asp-page="/Account/Register">Register</a>
-                    or <a asp-area="Identity" asp-page="/Account/Login">Sign In</a> to configure
-                    test Tools.
+                    @SharedLocalizer["Please"] <a asp-area="Identity" asp-page="/Account/Register">@SharedLocalizer["ToRegister"]</a>
+                    @SharedLocalizer["Or"] <a asp-area="Identity" asp-page="/Account/Login">@SharedLocalizer["ToLogin"]</a> @SharedLocalizer["ToConfigure"]
                 </p>
             </div>
         }
         else
         {
             <div class="col-6">
-                <h4>Welcome!</h4>
+                <h4>@SharedLocalizer["Welcome"]</h4>
                 <p>
-                    This is a demonstration LTI Advantage Tool which you can use with your Platform.
-                    The project is hosted on
+                    @SharedLocalizer["AboutLTITool"]
+                    @SharedLocalizer["ProjectBasedOn"]
                     <a href="https://github.com/andyfmiller/LtiAdvantageTool" target="_blank">
                         GitHub
                     </a>.
                 </p>
                 <p>
-                    This tool currently supports:
+                    @SharedLocalizer["ToolSupports"]
                     <ul>
                         <li>
                             <a href="https://www.imsglobal.org/spec/lti/v1p3/" target="_blank">
@@ -53,17 +59,17 @@
                     To use this Tool with your Platform:
                     <ol>
                         <li>
-                <p>Configure your Platform to launch this Tool...</p>
-                <pre class="mt-2 mb-2">@Url.Page("./Tool", null, null, "https")</pre>
-                <p>...using this OpenID Connect Login Initiation Page</p>
-                <pre class="mt-2 mb-2">@Url.Page("./OidcLogin", null, null, "https")</pre>
-                </li>
-                <li>
-                    <a asp-page="./Platforms/Index">Register your Platform</a> to record the
-                    platform's OpenID Connect endpoints, and the client credentials you want
-                    this tool to use.
-                </li>
-                </ol>
+                            <p>Configure your Platform to launch this Tool...</p>
+                            <pre class="mt-2 mb-2">@Url.Page("./Tool", null, null, "https")</pre>
+                            <p>...using this OpenID Connect Login Initiation Page</p>
+                            <pre class="mt-2 mb-2">@Url.Page("./OidcLogin", null, null, "https")</pre>
+                        </li>
+                        <li>
+                            <a asp-page="./Platforms/Index">Register your Platform</a> to record the
+                            platform's OpenID Connect endpoints, and the client credentials you want
+                            this tool to use.
+                        </li>
+                    </ol>
                 </p>
             </div>
             <div class="col-6">

@@ -8,6 +8,8 @@ using AdvantageTool.Data;
 using AdvantageTool.Utility;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AdvantageTool.Resources;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace AdvantageTool
 {
@@ -50,7 +52,7 @@ namespace AdvantageTool
 
             // Use app specific cookie name so both AdvantagePlatform and AdvantageTool can run
             // on localhost at the same time.
-            services.ConfigureApplicationCookie(options => options.Cookie.Name = "AdvantageTool" );
+            services.ConfigureApplicationCookie(options => options.Cookie.Name = "AdvantageTool");
 
             // Prevent X-Frame-Options header from being sent so that the Tool can appear
             // within an iframe on the platform
@@ -58,7 +60,13 @@ namespace AdvantageTool
 
             services.AddMvc(options => options.EnableEndpointRouting = false)
                 .AddRazorPagesOptions(options => options.Conventions.AuthorizeFolder("/Platforms"))
-                .SetCompatibilityVersion(CompatibilityVersion.Latest);
+                .SetCompatibilityVersion(CompatibilityVersion.Latest)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(Localization));
+                });
 
             services.AddHttpClient();
 
@@ -81,6 +89,13 @@ namespace AdvantageTool
                 app.UseDatabaseErrorPage();
                 app.UseHsts();
             }
+
+            var supportedCultures = new[] { "en", "hu" };
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[1])
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+
+            app.UseRequestLocalization(localizationOptions);
 
             app.UseStatusCodePagesWithRedirects("/Error?httpStatusCode={0}");
             app.UseHttpsRedirection();
