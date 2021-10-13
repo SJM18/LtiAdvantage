@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AdvantageTool.Data;
 using AdvantageTool.Utility;
+using AdvantageTool.Utility.Video;
 using LtiAdvantage.DeepLinking;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -132,9 +133,13 @@ namespace AdvantageTool.Pages
                         }
                     }
 
-                    if(activity.IsVideo)
+                    if (activity.IsVideo)
                     {
                         contentItem.Custom.TryAdd("videoId", activity.Id.ToString());
+                        contentItem.Thumbnail = new ImageProperty()
+                        {
+                            Url = activity.ImageUrl
+                        };
                     }
 
                     contentItems.Add(contentItem);
@@ -209,7 +214,36 @@ namespace AdvantageTool.Pages
         {
             var videoActivities = new List<Activity>();
 
-            videoActivities = context.GetAllVideo().Result.Select(v => new Activity() { Description = v.VideoType + " activity", Id = v.Id, Title = v.VideoId, IsVideo = true }).ToList();
+            var videos = context.GetAllVideo().Result;
+
+            foreach (var video in videos)
+            {
+                IVideoInfoGrabber videoInfoGrabber = null;
+
+                switch (video.VideoType)
+                {
+                    case VideoType.Youtube:
+                        videoInfoGrabber = new YoutubeInfoGrabber(video);
+                        break;
+                    case VideoType.Vimeo:
+                        videoInfoGrabber = new VimeoInfoGrabber(video.VideoId);
+                        break;
+                    case VideoType.Unknown:
+                    default:
+                        break;
+                }
+
+                var videoInfo = videoInfoGrabber.GetVideoInfo();
+
+                videoActivities.Add(new Activity()
+                {
+                    Description = video.VideoType + " activity",
+                    Id = video.Id,
+                    Title = videoInfo.Name,
+                    IsVideo = true,
+                    ImageUrl = videoInfo.CoverUrl
+                });
+            }
 
             return videoActivities;
         }
@@ -224,6 +258,7 @@ namespace AdvantageTool.Pages
             public string Description { get; set; }
             public bool Selected { get; set; }
             public bool IsVideo { get; set; }
+            public string ImageUrl { get; set; }
 
         }
     }
