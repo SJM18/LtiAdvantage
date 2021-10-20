@@ -79,11 +79,74 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back to List.
+        /// </summary>
+        public static string BackToList {
+            get {
+                return ResourceManager.GetString("BackToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configure your Platform to launch this Tool....
+        /// </summary>
+        public static string ConfigurePlatformToLaunch {
+            get {
+                return ResourceManager.GetString("ConfigurePlatformToLaunch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create a new account..
         /// </summary>
         public static string CreateNewAccount {
             get {
                 return ResourceManager.GetString("CreateNewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Name.
+        /// </summary>
+        public static string DisplayName {
+            get {
+                return ResourceManager.GetString("DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting Started.
+        /// </summary>
+        public static string GettingStarted {
+            get {
+                return ResourceManager.GetString("GettingStarted", resourceCulture);
             }
         }
         
@@ -97,11 +160,29 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Issuer.
+        /// </summary>
+        public static string Issuer {
+            get {
+                return ResourceManager.GetString("Issuer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logout.
         /// </summary>
         public static string Logout {
             get {
                 return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No platforms have been registered..
+        /// </summary>
+        public static string NoPlatformsRegistered {
+            get {
+                return ResourceManager.GetString("NoPlatformsRegistered", resourceCulture);
             }
         }
         
@@ -115,11 +196,29 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Platform Details.
+        /// </summary>
+        public static string PlatformDetails {
+            get {
+                return ResourceManager.GetString("PlatformDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Platforms.
         /// </summary>
         public static string Platforms {
             get {
                 return ResourceManager.GetString("Platforms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Platform Settings.
+        /// </summary>
+        public static string PlatformSettings {
+            get {
+                return ResourceManager.GetString("PlatformSettings", resourceCulture);
             }
         }
         
@@ -147,6 +246,42 @@ namespace AdvantageTool.Resources {
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered Platforms.
+        /// </summary>
+        public static string RegisteredPlatforms {
+            get {
+                return ResourceManager.GetString("RegisteredPlatforms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register New Platform.
+        /// </summary>
+        public static string RegisterNewPlatform {
+            get {
+                return ResourceManager.GetString("RegisterNewPlatform", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register your Platform.
+        /// </summary>
+        public static string RegisterYourPlatform {
+            get {
+                return ResourceManager.GetString("RegisterYourPlatform", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         
@@ -187,6 +322,15 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tool Settings.
+        /// </summary>
+        public static string ToolSettings {
+            get {
+                return ResourceManager.GetString("ToolSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This tool currently supports:.
         /// </summary>
         public static string ToolSupports {
@@ -196,11 +340,38 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to to record the platform&apos;s OpenID Connect endpoints, and the client credentials you want this tool to use..
+        /// </summary>
+        public static string ToRecordOpenIdEndpointsAndCredentials {
+            get {
+                return ResourceManager.GetString("ToRecordOpenIdEndpointsAndCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string ToRegister {
             get {
                 return ResourceManager.GetString("ToRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To use this Tool with your Platform.
+        /// </summary>
+        public static string UseThisToolWithPlatform {
+            get {
+                return ResourceManager.GetString("UseThisToolWithPlatform", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ..using this OpenID Connect Login Initiation Page.
+        /// </summary>
+        public static string UsingOpenIdConnect {
+            get {
+                return ResourceManager.GetString("UsingOpenIdConnect", resourceCulture);
             }
         }
         

@@ -54,7 +54,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item @MainNavPages.PlatformsNavClass(ViewContext)"><a class="nav-link" asp-page="/Platforms/Index">@SharedLocalizer["Platforms"]</a></li>
-                        <li class="nav-item @MainNavPages.PlatformsNavClass(ViewContext)"><a class="nav-link" asp-page="/Videos/Index">@SharedLocalizer["Videos"]</a></li>
+                        <li class="nav-item @MainNavPages.VideosNavClass(ViewContext)"><a class="nav-link" asp-page="/Videos/Index">@SharedLocalizer["Videos"]</a></li>
                     }
                     <li class="nav-item @MainNavPages.AboutNavClass(ViewContext)"><a class="nav-link" asp-page="/About">@SharedLocalizer["About"]</a></li>
                 </ul>

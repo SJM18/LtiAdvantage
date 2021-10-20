@@ -154,4 +154,61 @@
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Create a new account.</value>
   </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Getting Started</value>
+  </data>
+  <data name="UseThisToolWithPlatform" xml:space="preserve">
+    <value>To use this Tool with your Platform</value>
+  </data>
+  <data name="ConfigurePlatformToLaunch" xml:space="preserve">
+    <value>Configure your Platform to launch this Tool...</value>
+  </data>
+  <data name="UsingOpenIdConnect" xml:space="preserve">
+    <value>..using this OpenID Connect Login Initiation Page</value>
+  </data>
+  <data name="RegisteredPlatforms" xml:space="preserve">
+    <value>Registered Platforms</value>
+  </data>
+  <data name="Issuer" xml:space="preserve">
+    <value>Issuer</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Display Name</value>
+  </data>
+  <data name="RegisterYourPlatform" xml:space="preserve">
+    <value>Register your Platform</value>
+  </data>
+  <data name="ToRecordOpenIdEndpointsAndCredentials" xml:space="preserve">
+    <value>to record the platform's OpenID Connect endpoints, and the client credentials you want this tool to use.</value>
+  </data>
+  <data name="NoPlatformsRegistered" xml:space="preserve">
+    <value>No platforms have been registered.</value>
+  </data>
+  <data name="RegisterNewPlatform" xml:space="preserve">
+    <value>Register New Platform</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ToolSettings" xml:space="preserve">
+    <value>Tool Settings</value>
+  </data>
+  <data name="PlatformSettings" xml:space="preserve">
+    <value>Platform Settings</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PlatformDetails" xml:space="preserve">
+    <value>Platform Details</value>
+  </data>
 </root>

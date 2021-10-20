@@ -1,14 +1,20 @@
 ﻿@page
 @model IndexModel
 
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Resources
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<Localization> SharedLocalizer
+
 @{
-    ViewData["Title"] = "Platforms";
+    ViewData["Title"] = SharedLocalizer["Platforms"];
 }
 
 <div class="container-fluid">
     <h4>@ViewData["Title"]</h4>
     <p>
-        <a asp-page="Create">Register New Platform</a>
+        <a asp-page="Create">@SharedLocalizer["RegisterNewPlatform"]</a>
     </p>
     <table class="table">
         <thead>
@@ -21,15 +27,15 @@
         <tbody>
             @foreach (var item in Model.Platforms)
             {
-            <tr>
-                <td>@Html.DisplayFor(m => item.Name)</td>
-                <td>@Html.DisplayFor(m => item.Issuer)</td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Name)</td>
+                    <td>@Html.DisplayFor(m => item.Issuer)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">@SharedLocalizer["Details"]</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

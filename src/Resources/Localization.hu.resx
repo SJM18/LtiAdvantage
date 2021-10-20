@@ -154,4 +154,61 @@
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Új felhasználó létrehozása.</value>
   </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Kezdő lépések</value>
+  </data>
+  <data name="UseThisToolWithPlatform" xml:space="preserve">
+    <value>Használd az Eszközt a Platformoddal</value>
+  </data>
+  <data name="ConfigurePlatformToLaunch" xml:space="preserve">
+    <value>Állítsd be a Platformod, hogy elindíthasd ezt az Eszközt...</value>
+  </data>
+  <data name="UsingOpenIdConnect" xml:space="preserve">
+    <value>..a következő OpenID bejelentkezési oldal használatával</value>
+  </data>
+  <data name="RegisteredPlatforms" xml:space="preserve">
+    <value>Regisztrált Platformok</value>
+  </data>
+  <data name="Issuer" xml:space="preserve">
+    <value>Aláíró</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Megnevezés</value>
+  </data>
+  <data name="RegisterYourPlatform" xml:space="preserve">
+    <value>Regisztráld a Platformod</value>
+  </data>
+  <data name="NoPlatformsRegistered" xml:space="preserve">
+    <value>Nincs Platform regisztrálva.</value>
+  </data>
+  <data name="RegisterNewPlatform" xml:space="preserve">
+    <value>Új Platform regisztálása</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Módosítás</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Részletek</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="ToolSettings" xml:space="preserve">
+    <value>Eszköz beállítások</value>
+  </data>
+  <data name="PlatformSettings" xml:space="preserve">
+    <value>Platform beállítások</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Vissza a listához</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="PlatformDetails" xml:space="preserve">
+    <value>Platform Részletek</value>
+  </data>
+  <data name="ToRecordOpenIdEndpointsAndCredentials" xml:space="preserve">
+    <value>, hogy beállíthasd a OpenID kapcsolódási végpontokat és a felhasználói azonosítókat amivel akarod használni ezt az Eszközt</value>
+  </data>
 </root>

@@ -69,7 +69,7 @@ namespace AdvantageTool.Pages.Platforms
         public string JwkSetUrl { get; set; }
 
         [Required]
-        [Display(Name = "Display Name")]
+        [Display(Name = "DisplayName")]
         public string Name { get; set; }
 
         /// <summary>

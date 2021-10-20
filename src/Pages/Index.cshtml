@@ -54,29 +54,27 @@
                         </li>
                     </ul>
                 </p>
-                <h4>Getting Started</h4>
+                <h4>@SharedLocalizer["GettingStarted"]</h4>
                 <p>
-                    To use this Tool with your Platform:
+                    @SharedLocalizer["UseThisToolWithPlatform"]:
                     <ol>
                         <li>
-                            <p>Configure your Platform to launch this Tool...</p>
+                            <p>@SharedLocalizer["ConfigurePlatformToLaunch"]</p>
                             <pre class="mt-2 mb-2">@Url.Page("./Tool", null, null, "https")</pre>
-                            <p>...using this OpenID Connect Login Initiation Page</p>
+                            <p>@SharedLocalizer["UsingOpenIdConnect"]</p>
                             <pre class="mt-2 mb-2">@Url.Page("./OidcLogin", null, null, "https")</pre>
                         </li>
                         <li>
-                            <a asp-page="./Platforms/Index">Register your Platform</a> to record the
-                            platform's OpenID Connect endpoints, and the client credentials you want
-                            this tool to use.
+                            <a asp-page="./Platforms/Index">@SharedLocalizer["RegisterYourPlatform"]</a> @SharedLocalizer["ToRecordOpenIdEndpointsAndCredentials"]
                         </li>
                     </ol>
                 </p>
             </div>
             <div class="col-6">
-                <h4>Registered Platforms</h4>
+                <h4>@SharedLocalizer["RegisteredPlatforms"]</h4>
                 @if (Model.Platforms == null || !Model.Platforms.Any())
                 {
-                    <p>No platforms have been registered.</p>
+                    <p>@SharedLocalizer["NoPlatformsRegistered"]</p>
                 }
                 else
                 {
