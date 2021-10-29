@@ -79,11 +79,56 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access Token URL.
+        /// </summary>
+        public static string AccessTokenUrl {
+            get {
+                return ResourceManager.GetString("AccessTokenUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tool can request an access token using this endpoint (for example to use the Names and Role Service)..
+        /// </summary>
+        public static string AccessTokenUrlDescription {
+            get {
+                return ResourceManager.GetString("AccessTokenUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authorization URL.
+        /// </summary>
+        public static string AuthorizationUrl {
+            get {
+                return ResourceManager.GetString("AuthorizationUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tool requests the identity token from this endpoint..
+        /// </summary>
+        public static string AuthorizationUrlDescription {
+            get {
+                return ResourceManager.GetString("AuthorizationUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back to List.
         /// </summary>
         public static string BackToList {
             get {
                 return ResourceManager.GetString("BackToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client ID.
+        /// </summary>
+        public static string ClientId {
+            get {
+                return ResourceManager.GetString("ClientId", resourceCulture);
             }
         }
         
@@ -97,11 +142,38 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string Create {
+            get {
+                return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create a new account..
         /// </summary>
         public static string CreateNewAccount {
             get {
                 return ResourceManager.GetString("CreateNewAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deep Linking Launch URL.
+        /// </summary>
+        public static string DeepLinkingLaunchUrl {
+            get {
+                return ResourceManager.GetString("DeepLinkingLaunchUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The URL to launch the tool&apos;s deep linking experience..
+        /// </summary>
+        public static string DeepLinkingLaunchUrlDescription {
+            get {
+                return ResourceManager.GetString("DeepLinkingLaunchUrlDescription", resourceCulture);
             }
         }
         
@@ -142,6 +214,15 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to for development keys see.
+        /// </summary>
+        public static string ForDevelopmentKeysSee {
+            get {
+                return ResourceManager.GetString("ForDevelopmentKeysSee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Getting Started.
         /// </summary>
         public static string GettingStarted {
@@ -165,6 +246,69 @@ namespace AdvantageTool.Resources {
         public static string Issuer {
             get {
                 return ResourceManager.GetString("Issuer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the Issuer for all messages that originate from the Platform..
+        /// </summary>
+        public static string IssuerDescription {
+            get {
+                return ResourceManager.GetString("IssuerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JWK Set URL.
+        /// </summary>
+        public static string JwkSetUrl {
+            get {
+                return ResourceManager.GetString("JwkSetUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tool can retrieve the platform&apos;s public keys using this endpoint..
+        /// </summary>
+        public static string JwkSetUrlDescription {
+            get {
+                return ResourceManager.GetString("JwkSetUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch URL.
+        /// </summary>
+        public static string LaunchUrl {
+            get {
+                return ResourceManager.GetString("LaunchUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The URL to launch the tool&apos;s resource link experience..
+        /// </summary>
+        public static string LaunchUrlDescription {
+            get {
+                return ResourceManager.GetString("LaunchUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login URL.
+        /// </summary>
+        public static string LoginUrl {
+            get {
+                return ResourceManager.GetString("LoginUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The URL to initiate the tool&apos;s OpenID Connect third party login..
+        /// </summary>
+        public static string LoginUrlDescription {
+            get {
+                return ResourceManager.GetString("LoginUrlDescription", resourceCulture);
             }
         }
         
@@ -196,11 +340,29 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Platform.
+        /// </summary>
+        public static string PlatformDelete {
+            get {
+                return ResourceManager.GetString("PlatformDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Platform Details.
         /// </summary>
         public static string PlatformDetails {
             get {
                 return ResourceManager.GetString("PlatformDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Platform.
+        /// </summary>
+        public static string PlatformRegister {
+            get {
+                return ResourceManager.GetString("PlatformRegister", resourceCulture);
             }
         }
         
@@ -228,6 +390,33 @@ namespace AdvantageTool.Resources {
         public static string Please {
             get {
                 return ResourceManager.GetString("Please", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Private Key.
+        /// </summary>
+        public static string PrivateKey {
+            get {
+                return ResourceManager.GetString("PrivateKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the private key the tool will use to sign client credentials..
+        /// </summary>
+        public static string PrivateKeyDescription {
+            get {
+                return ResourceManager.GetString("PrivateKeyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the private key in PEM format..
+        /// </summary>
+        public static string PrivateKeyInPEMFormat {
+            get {
+                return ResourceManager.GetString("PrivateKeyInPEMFormat", resourceCulture);
             }
         }
         

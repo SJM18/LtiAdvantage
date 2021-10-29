@@ -209,6 +209,69 @@
     <value>Platform Részletek</value>
   </data>
   <data name="ToRecordOpenIdEndpointsAndCredentials" xml:space="preserve">
-    <value>, hogy beállíthasd a OpenID kapcsolódási végpontokat és a felhasználói azonosítókat amivel akarod használni ezt az Eszközt</value>
+    <value>hogy beállíthasd a Open ID kapcsolódási végpontokat és a felhasználói azonosítókat amivel akarod használni ezt az Eszközt</value>
+  </data>
+  <data name="JwkSetUrl" xml:space="preserve">
+    <value>JWK gyűjtemény URL</value>
+  </data>
+  <data name="AuthorizationUrl" xml:space="preserve">
+    <value>Authorizációs URL</value>
+  </data>
+  <data name="AccessTokenUrl" xml:space="preserve">
+    <value>Elérési kulcs URL</value>
+  </data>
+  <data name="JwkSetUrlDescription" xml:space="preserve">
+    <value>Az eszköz elérheti a platform publikus kulcsát ezen a végponton.</value>
+  </data>
+  <data name="IssuerDescription" xml:space="preserve">
+    <value>Ez az Aláíró az összes üzenethez ami a Platformtól származik.</value>
+  </data>
+  <data name="AuthorizationUrlDescription" xml:space="preserve">
+    <value>Az Eszköz ezen végpont segítéségével hitelesíti magát.</value>
+  </data>
+  <data name="AccessTokenUrlDescription" xml:space="preserve">
+    <value>Az Eszköz ezen a végponton keresztül tud kulcsot igényelni (amivel például elérheti a Names and Role Service szolgáltatást).</value>
+  </data>
+  <data name="ClientId" xml:space="preserve">
+    <value>Kliens ID</value>
+  </data>
+  <data name="DeepLinkingLaunchUrl" xml:space="preserve">
+    <value>Deep Linking indító URL</value>
+  </data>
+  <data name="LaunchUrl" xml:space="preserve">
+    <value>Indító URL</value>
+  </data>
+  <data name="LoginUrl" xml:space="preserve">
+    <value>Bejelentkező URL</value>
+  </data>
+  <data name="PrivateKey" xml:space="preserve">
+    <value>Privát kulcs</value>
+  </data>
+  <data name="DeepLinkingLaunchUrlDescription" xml:space="preserve">
+    <value>Hivatkozás az Eszközön lévő Deep Linking technológia indításához.</value>
+  </data>
+  <data name="LaunchUrlDescription" xml:space="preserve">
+    <value>Hivatkozás az Eszlöz erőforrásának indításához.</value>
+  </data>
+  <data name="LoginUrlDescription" xml:space="preserve">
+    <value>Hivatkozás az Eszköz OpenID bejelentkezéséhez.</value>
+  </data>
+  <data name="PrivateKeyDescription" xml:space="preserve">
+    <value>Ez a privát kulcs lesz használva az Eszköz általi az üzenetek aláírásához.</value>
+  </data>
+  <data name="ForDevelopmentKeysSee" xml:space="preserve">
+    <value>fejlesztői kulcs generáláshoz használd a következő oldal</value>
+  </data>
+  <data name="PrivateKeyInPEMFormat" xml:space="preserve">
+    <value>A privát kulcsot PEM formátumban kell megadni.</value>
+  </data>
+  <data name="PlatformRegister" xml:space="preserve">
+    <value>Platform létrehozása</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Létrehozás</value>
+  </data>
+  <data name="PlatformDelete" xml:space="preserve">
+    <value>Platform törlése</value>
   </data>
 </root>

@@ -86,8 +86,8 @@
                         <div class="form-group">
                             <label asp-for="Platform.PrivateKey"></label>
                             <tooltip asp-for="Platform.PrivateKey"></tooltip>
-                            (for development keys see <a href="https://lti-ri.imsglobal.org/keygen/index" target="_blank">https://lti-ri.imsglobal.org/keygen/index</a>)
-                            <textarea asp-for="Platform.PrivateKey" class="form-control text-monospace small" rows="5" placeholder="Enter the private key in PEM format."></textarea>
+                            (@SharedLocalizer["ForDevelopmentKeysSee"] <a href="https://lti-ri.imsglobal.org/keygen/index" target="_blank">https://lti-ri.imsglobal.org/keygen/index</a>)
+                            <textarea asp-for="Platform.PrivateKey" class="form-control text-monospace small" rows="5" placeholder="@SharedLocalizer["PrivateKeyInPEMFormat"]"></textarea>
                             <span asp-validation-for="Platform.PrivateKey" class="text-danger"></span>
                         </div>
                     </div>
