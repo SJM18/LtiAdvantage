@@ -274,4 +274,34 @@
   <data name="PlatformDelete" xml:space="preserve">
     <value>Delete Platform</value>
   </data>
+  <data name="VideoCreate" xml:space="preserve">
+    <value>Add new video</value>
+  </data>
+  <data name="VideoSettings" xml:space="preserve">
+    <value>Video Settings</value>
+  </data>
+  <data name="VideoProviderType" xml:space="preserve">
+    <value>Type of the video provider</value>
+  </data>
+  <data name="VideoType" xml:space="preserve">
+    <value>Type of the video</value>
+  </data>
+  <data name="VideoId" xml:space="preserve">
+    <value>Id of the Video</value>
+  </data>
+  <data name="VideoIdDescription" xml:space="preserve">
+    <value>This is an unique id of the video, usually available in the video URL</value>
+  </data>
+  <data name="VideoDelete" xml:space="preserve">
+    <value>Delete Video</value>
+  </data>
+  <data name="VideoEdit" xml:space="preserve">
+    <value>Edit Video</value>
+  </data>
+  <data name="YoutubePlayer" xml:space="preserve">
+    <value>Youtube Player</value>
+  </data>
+  <data name="VimeoPlayer" xml:space="preserve">
+    <value>Vimeo Player</value>
+  </data>
 </root>

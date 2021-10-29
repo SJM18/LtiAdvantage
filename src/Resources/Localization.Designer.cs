@@ -565,11 +565,92 @@ namespace AdvantageTool.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new video.
+        /// </summary>
+        public static string VideoCreate {
+            get {
+                return ResourceManager.GetString("VideoCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Video.
+        /// </summary>
+        public static string VideoDelete {
+            get {
+                return ResourceManager.GetString("VideoDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Video.
+        /// </summary>
+        public static string VideoEdit {
+            get {
+                return ResourceManager.GetString("VideoEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id of the Video.
+        /// </summary>
+        public static string VideoId {
+            get {
+                return ResourceManager.GetString("VideoId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is an unique id of the video, usually available in the video URL.
+        /// </summary>
+        public static string VideoIdDescription {
+            get {
+                return ResourceManager.GetString("VideoIdDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of the video provider.
+        /// </summary>
+        public static string VideoProviderType {
+            get {
+                return ResourceManager.GetString("VideoProviderType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Videos.
         /// </summary>
         public static string Videos {
             get {
                 return ResourceManager.GetString("Videos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video Settings.
+        /// </summary>
+        public static string VideoSettings {
+            get {
+                return ResourceManager.GetString("VideoSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of the video.
+        /// </summary>
+        public static string VideoType {
+            get {
+                return ResourceManager.GetString("VideoType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vimeo Player.
+        /// </summary>
+        public static string VimeoPlayer {
+            get {
+                return ResourceManager.GetString("VimeoPlayer", resourceCulture);
             }
         }
         
@@ -588,6 +669,15 @@ namespace AdvantageTool.Resources {
         public static string WelcomeStranger {
             get {
                 return ResourceManager.GetString("WelcomeStranger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Youtube Player.
+        /// </summary>
+        public static string YoutubePlayer {
+            get {
+                return ResourceManager.GetString("YoutubePlayer", resourceCulture);
             }
         }
     }
