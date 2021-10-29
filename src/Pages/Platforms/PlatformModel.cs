@@ -51,25 +51,25 @@ namespace AdvantageTool.Pages.Platforms
 
         [LocalhostUrl]
         [Required]
-        [Display(Name = "Access Token URL", Description = "The tool can request an access token using this endpoint (for example to use the Names and Role Service).")]
+        [Display(Name = "AccessTokenUrl", Description = "AccessTokenUrlDescription")]
         public string AccessTokenUrl { get; set; }
 
         [LocalhostUrl]
         [Required]
-        [Display(Name = "Authorization URL", Description = "The tool requests the identity token from this endpoint.")]
+        [Display(Name = "AuthorizationUrl", Description = "AuthorizationUrlDescription")]
         public string AuthorizeUrl { get; set; }
 
         [Required]
-        [Display(Name = "Issuer", Description = "This is the Issuer for all messages that originate from the Platform.")]
+        [Display(Name = "Issuer", Description = "IssuerDescription")]
         public string Issuer { get; set; }
 
         [LocalhostUrl]
         [Required]
-        [Display(Name = "JWK Set URL", Description = "The tool can retrieve the platform's public keys using this endpoint.")]
+        [Display(Name = "JwkSetUrl", Description = "JwkSetUrlDescription")]
         public string JwkSetUrl { get; set; }
 
         [Required]
-        [Display(Name = "Display Name")]
+        [Display(Name = "DisplayName")]
         public string Name { get; set; }
 
         /// <summary>
@@ -90,33 +90,33 @@ namespace AdvantageTool.Pages.Platforms
         /// Tool's OpenID Client ID
         /// </summary>
         [Required]
-        [Display(Name = "Client ID")]
+        [Display(Name = "ClientId")]
         public string ClientId { get; set; }
                 
         /// <summary>
         /// Deep linking launch url.
         /// </summary>
         [LocalhostUrl]
-        [Display(Name = "Deep Linking Launch URL", Description = "The URL to launch the tool's deep linking experience.")]
+        [Display(Name = "DeepLinkingLaunchUrl", Description = "DeepLinkingLaunchUrlDescription")]
         public string DeepLinkingLaunchUrl { get; set; }
 
         /// <summary>
         /// Tool launch url.
         /// </summary>
-        [Display(Name = "Launch URL", Description = "The URL to launch the tool's resource link experience.")]
+        [Display(Name = "LaunchUrl", Description = "LaunchUrlDescription")]
         public string LaunchUrl { get; set; }
 
         /// <summary>
         /// OIDC login initiation url.
         /// </summary>
-        [Display(Name = "Login URL", Description = "The URL to initiate the tool's OpenID Connect third party login.")]
+        [Display(Name = "LoginUrl", Description = "LoginUrlDescription")]
         public string LoginUrl { get; set; }
 
         /// <summary>
         /// Tool's private key in PEM format
         /// </summary>
         [Required]
-        [Display(Name = "Private Key", Description = "This is the private key the tool will use to sign client credentials.")]
+        [Display(Name = "PrivateKey", Description = "PrivateKeyDescription")]
         public string PrivateKey { get; set; }
 
         #endregion

@@ -154,4 +154,124 @@
   <data name="CreateNewAccount" xml:space="preserve">
     <value>Create a new account.</value>
   </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Getting Started</value>
+  </data>
+  <data name="UseThisToolWithPlatform" xml:space="preserve">
+    <value>To use this Tool with your Platform</value>
+  </data>
+  <data name="ConfigurePlatformToLaunch" xml:space="preserve">
+    <value>Configure your Platform to launch this Tool...</value>
+  </data>
+  <data name="UsingOpenIdConnect" xml:space="preserve">
+    <value>..using this OpenID Connect Login Initiation Page</value>
+  </data>
+  <data name="RegisteredPlatforms" xml:space="preserve">
+    <value>Registered Platforms</value>
+  </data>
+  <data name="Issuer" xml:space="preserve">
+    <value>Issuer</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Display Name</value>
+  </data>
+  <data name="RegisterYourPlatform" xml:space="preserve">
+    <value>Register your Platform</value>
+  </data>
+  <data name="ToRecordOpenIdEndpointsAndCredentials" xml:space="preserve">
+    <value>to record the platform's OpenID Connect endpoints, and the client credentials you want this tool to use.</value>
+  </data>
+  <data name="NoPlatformsRegistered" xml:space="preserve">
+    <value>No platforms have been registered.</value>
+  </data>
+  <data name="RegisterNewPlatform" xml:space="preserve">
+    <value>Register New Platform</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ToolSettings" xml:space="preserve">
+    <value>Tool Settings</value>
+  </data>
+  <data name="PlatformSettings" xml:space="preserve">
+    <value>Platform Settings</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PlatformDetails" xml:space="preserve">
+    <value>Platform Details</value>
+  </data>
+  <data name="JwkSetUrl" xml:space="preserve">
+    <value>JWK Set URL</value>
+  </data>
+  <data name="AuthorizationUrl" xml:space="preserve">
+    <value>Authorization URL</value>
+  </data>
+  <data name="AccessTokenUrl" xml:space="preserve">
+    <value>Access Token URL</value>
+  </data>
+  <data name="JwkSetUrlDescription" xml:space="preserve">
+    <value>The tool can retrieve the platform's public keys using this endpoint.</value>
+  </data>
+  <data name="IssuerDescription" xml:space="preserve">
+    <value>This is the Issuer for all messages that originate from the Platform.</value>
+  </data>
+  <data name="AuthorizationUrlDescription" xml:space="preserve">
+    <value>The tool requests the identity token from this endpoint.</value>
+  </data>
+  <data name="AccessTokenUrlDescription" xml:space="preserve">
+    <value>The tool can request an access token using this endpoint (for example to use the Names and Role Service).</value>
+  </data>
+  <data name="ClientId" xml:space="preserve">
+    <value>Client ID</value>
+  </data>
+  <data name="DeepLinkingLaunchUrl" xml:space="preserve">
+    <value>Deep Linking Launch URL</value>
+  </data>
+  <data name="LaunchUrl" xml:space="preserve">
+    <value>Launch URL</value>
+  </data>
+  <data name="LoginUrl" xml:space="preserve">
+    <value>Login URL</value>
+  </data>
+  <data name="PrivateKey" xml:space="preserve">
+    <value>Private Key</value>
+  </data>
+  <data name="DeepLinkingLaunchUrlDescription" xml:space="preserve">
+    <value>The URL to launch the tool's deep linking experience.</value>
+  </data>
+  <data name="LaunchUrlDescription" xml:space="preserve">
+    <value>The URL to launch the tool's resource link experience.</value>
+  </data>
+  <data name="LoginUrlDescription" xml:space="preserve">
+    <value>The URL to initiate the tool's OpenID Connect third party login.</value>
+  </data>
+  <data name="PrivateKeyDescription" xml:space="preserve">
+    <value>This is the private key the tool will use to sign client credentials.</value>
+  </data>
+  <data name="ForDevelopmentKeysSee" xml:space="preserve">
+    <value>for development keys see</value>
+  </data>
+  <data name="PrivateKeyInPEMFormat" xml:space="preserve">
+    <value>Enter the private key in PEM format.</value>
+  </data>
+  <data name="PlatformRegister" xml:space="preserve">
+    <value>Register Platform</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="PlatformDelete" xml:space="preserve">
+    <value>Delete Platform</value>
+  </data>
 </root>
