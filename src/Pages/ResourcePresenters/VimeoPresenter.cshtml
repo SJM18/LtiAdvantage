@@ -1,6 +1,13 @@
 ﻿@page
 @using AdvantageTool.Utility
 @model AdvantageTool.Pages.ResourcePresenters.VimeoPresenterModel
+
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Resources
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<Localization> SharedLocalizer
+
 @{
     Layout = null;
 }
@@ -9,7 +16,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Youtube player</title>
+    <title>@SharedLocalizer["VimeoPlayer"]</title>
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" href="~/lib/fontawesome/css/all.css" />

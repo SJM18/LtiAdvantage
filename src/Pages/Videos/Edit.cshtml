@@ -1,12 +1,18 @@
 ﻿@page
 @model EditModel
 
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Resources
+
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<Localization> SharedLocalizer
+
 @{
-    ViewData["Title"] = "Videos";
+    ViewData["Title"] = SharedLocalizer["Videos"];
 }
 
 <div class="container-fluid">
-    <h4>Edit Video</h4>
+    <h4>@SharedLocalizer["VideoEdit"]</h4>
     <hr />
     <form method="post">
         <input type="hidden" asp-for="VideoModel.Id" />
@@ -15,7 +21,7 @@
             <div class="col-lg-6 mb-3">
                 <div class="card">
                     <h5 class="card-header bg-secondary text-light">
-                        Edit Video Settings
+                        @SharedLocalizer["VideoSettings"]
                     </h5>
                     <div class="card-body">
                         <div class="form-group">
@@ -25,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="VideoModel.VideoType"></label>
-                            <tooltip asp-for="VideoModel.VideoType">Type of the video provider</tooltip>
+                            <tooltip asp-for="VideoModel.VideoType">@SharedLocalizer["VideoProviderType"]</tooltip>
 
                             @Html.RadioButtonFor(model => model.VideoModel.VideoType, VideoType.Youtube, new { disabled = "disabled" })@Html.Label("Youtube")
                             @Html.RadioButtonFor(model => model.VideoModel.VideoType, VideoType.Vimeo, new { disabled = "disabled" })@Html.Label("Vimeo")
@@ -33,7 +39,7 @@
                             <span asp-validation-for="VideoModel.VideoType" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Save" class="btn btn-secondary" />
+                            <input type="submit" value="@SharedLocalizer["Save"]" class="btn btn-secondary" />
                         </div>
                     </div>
                 </div>
